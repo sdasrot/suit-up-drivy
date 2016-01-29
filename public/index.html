@@ -2,32 +2,112 @@
 <html>
   <head>
     <title>CSS/HTML Workshop with Drivy</title>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Drivy</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	
+	 <!-- Custom CSS -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+	
+
   </head>
-  <body>
-    <div id="car">
-      <input class="model" type="text" placeholder="Car model"/>
-      <input class="price-by-day" type="number" placeholder="Price by day"/>
-      <input class="price-by-km" type="number" placeholder="Price by km"/>
-    </div>
-    <div id="rental">
-      <input class="begin" type="date" placeholder="Rental begin date"/>
-      <input class="end" type="date" placeholder="Rental end date"/>
-      <input class="distance" type="number" placeholder="Distance in km"/>
-      <input class="option" type="checkbox" placeholder="Deductible option"/>
-    </div>
-    <button id="compute">Compute</button>
-    <div id="actors"></div>
-    <script id="template" type="x-tmpl-mustache">
-      {{#actors}}
-        <div class="actor">
-          <span>{{who}}</span>
-          <span>{{type}}</span>
-          <span>{{amount}}</span>
+  
+  
+     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <div >
+                    <div class="site-heading">
+                        <h1>Drivy</h1>
+                        <hr class="small">
+                        <span class="subheading">Rent a nice car with us</span>
+                    </div>
+                </div>
+            </div>
         </div>
-      {{/actors}}
-    </script>
+        <!-- /.container -->
+    </nav>
+  <body>
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('img/nissan-gtr.jpeg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>Drivy</h1>
+                        <hr class="small">
+                        <span class="subheading">Rent a nice car with us</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+   <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-preview">
+				
+					<fieldset class="rental">
+					  <legend>About period and distance</legend>
+					  <label for="begin">Rental begin date</label>
+					  <input class="begin" type="date" id="theDate"/>
+					  <label for="end">Rental end date</label>
+					  <input class="end" type="date" id="theDate2"/>
+					  <input class="distance" type="number" placeholder="Distance in km"/>
+					  <p>Do you want the deductible option ?</p>
+					  <input class="option" type="checkbox" placeholder="Deductible option"/>
+					</fieldset>
+					
+					<fieldset class="car">
+					  <legend>About price</legend>
+					  <input class="model" type="text" placeholder="Car model"/>
+					  <input class="price-by-day" type="number" placeholder="Price by day"/>
+					  <input class="price-by-km" type="number" placeholder="Price by km"/>
+					</fieldset>
+
+					<button id="compute">Compute</button>
+					<div id="actors"></div>
+					<script id="template" type="x-tmpl-mustache">
+					  {{#actors}}
+						<div class="actor">
+						  <span>{{who}}</span>
+						  <span>{{type}}</span>
+						  <span>{{amount}}</span>
+						</div>
+					  {{/actors}}
+					</script>	
+	            </div>
+			</div>
+        </div>
+    </div>
+					
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
     <script src="drivy.js"></script>
     <script src="index.js"></script>
+	    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/clean-blog.min.js"></script>
+	
+	<script src="js/getToday.js"></script>
   </body>
+  
+
 </html>
